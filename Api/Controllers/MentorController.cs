@@ -33,6 +33,13 @@ namespace Api.Controllers
             return Ok(mentor);
         }
 
+        [HttpGet("free/{scienceId:int}")]
+        public async Task<ActionResult<List<Mentor>>> GetAllFreeByScienceId(int scienceId)
+        {
+            var mentors = await _mentorService.GetAllFreeByScienceIdAsync(scienceId);
+            return Ok(mentors);
+        }
+
         [HttpPost]
         public async Task<ActionResult<Mentor>> Create([FromBody] Mentor mentor)
         {
