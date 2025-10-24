@@ -24,6 +24,8 @@ public class Program
         builder.Services.AddScoped<IMentorService, MentorService>();
         builder.Services.AddScoped<IScienceService, ScienceService>();
         builder.Services.AddScoped<IProcedureService, ProcedureService>();
+        builder.Services.AddScoped<IDistanceService, DistanceService>();
+
         builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
         {
             options.SerializerOptions.PropertyNamingPolicy = null;

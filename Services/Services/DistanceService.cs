@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Enums;
 using Infrastructure.Models;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Services.Services
 {
-    public class DistanceService
+    public class DistanceService : IDistanceService
     {
         public Dictionary<string, List<Mentor>> ClosestDistance(List<Mentor> mentors)
         {
