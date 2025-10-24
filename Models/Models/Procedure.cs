@@ -11,8 +11,8 @@ namespace Infrastructure.Models
     public class Procedure : BaseModel
     {
         public DateTime Date { get; set; }
-        public List<Mentor> mentors { get; set; }
+        public List<Mentor>? mentors { get; set; }
         public Level Level { get; set; }
-        public Science Science { get; set; }
+        public Science? Science { get; set; }
     }
 }
