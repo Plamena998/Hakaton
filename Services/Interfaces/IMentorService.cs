@@ -11,6 +11,8 @@ namespace Services.Interfaces
         Task<Mentor> CreateAsync(Mentor mentor);
         Task<bool> UpdateAsync(Mentor mentor);
         Task<bool> DeleteAsync(int id);
+
+        Task<List<Mentor>> GetAllFreeByScienceIdAsync(int scienceId);
     }
 }
 

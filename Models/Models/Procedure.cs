@@ -13,6 +13,7 @@ namespace Infrastructure.Models
         public DateTime Date { get; set; }
         public List<Mentor>? mentors { get; set; }
         public Level Level { get; set; }
+        public int? ScienceId { get; set; }
         public Science? Science { get; set; }
     }
 }

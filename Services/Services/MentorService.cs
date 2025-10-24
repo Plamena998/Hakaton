@@ -1,4 +1,5 @@
 using DBContext;
+using System;
 using Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 using Services.Interfaces;
@@ -59,7 +60,27 @@ namespace Services.Services
             await _dbContext.SaveChangesAsync();
             return true;
         }
+
+        public async Task<List<Mentor>> GetAllFreeByScienceIdAsync(int scienceId)
+        {
+            return await _dbContext.mentors
+                .AsNoTracking()
+                .Where(m =>
+                    m.ScienceId == scienceId &&
+                    m.IsDeleted == false &&
+                    (
+                        m.LastProcedureDate == null
+                        || m.LastProcedureDate.Value.Date != DateTime.UtcNow.Date
+                        // Cannot take if mentor had two days in a row procedures
+                        || !(
+                            m.BeforeLastProcedureDate.HasValue
+                            && m.LastProcedureDate.HasValue
+                            && m.LastProcedureDate.Value.Date == DateTime.UtcNow.Date
+                            && m.BeforeLastProcedureDate.Value.Date == DateTime.UtcNow.Date.AddDays(-1)
+                        )
+                    )
+                )
+                .ToListAsync();
+        }
     }
 }
-
-
