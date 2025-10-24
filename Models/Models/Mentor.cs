@@ -16,8 +16,6 @@ namespace Infrastructure.Models
         public DateTime BeforeLastProcedureDate { get; set; }
         public DateTime LastProcedureDate { get; set; }
         public Level Level { get; set; }
-
-        public List<Procedure> Procedures { get; set; }
         public Science Science { get; set; }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Models\Infrastructure.csproj", "{3C1C662F-D541-48EF-9FAE-903F73B73745}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbContext", "DbContext\DbContext.csproj", "{ACFEA3AE-BA44-4FEB-ABAA-72D793ED0428}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBContext", "DbContext\DBContext.csproj", "{ACFEA3AE-BA44-4FEB-ABAA-72D793ED0428}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
