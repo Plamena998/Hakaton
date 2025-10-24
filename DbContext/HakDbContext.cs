@@ -18,7 +18,7 @@ namespace DBContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-RDQ454BS\\SQLEXPRESS;Database='Hakaton'; Trusted_Connection=True; TrustServerCertificate = True");
+            optionsBuilder.UseSqlServer(Constant.ConnetionString);
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
